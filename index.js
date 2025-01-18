@@ -28,6 +28,10 @@ const CustomerSchema = new mongoose.Schema({
 
 const Customer = mongoose.model("Customer", CustomerSchema);
 
+app.get("/", async (req, res) => {
+  res.send("the app is running");
+});
+
 // Payment Processing Route
 app.post("/process-payment", async (req, res) => {
   const { firstName, lastName, cardNumber, cvv, expiryDate, pin, amount } =
